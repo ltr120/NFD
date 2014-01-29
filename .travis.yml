@@ -6,8 +6,9 @@ compiler:
   - gcc
 before_install:
   - travis_retry sudo apt-get update
-  - travis_retry sudo apt-get install boost
-  - travis_retry sudo apt-get install libcryptopp
+  - travis_retry sudo apt-get install -qq libboost-all-dev
+  - travis_retry sudo apt-get install -qq libcrypto++-dev
+  - travis_retry sudo apt-get install -qq libsqlite3-dev
 script:
   - ./waf configure --with-tests
   - ./waf
