@@ -25,7 +25,7 @@ before_install:
 script:
   - ./waf configure --with-tests
   - ./waf
-  - ./waf install
+  - sudo ./waf install
   - ./build/unit-tests
 # Tutorial for setting up notifications:
 # http://docs.travis-ci.com/user/notifications/
