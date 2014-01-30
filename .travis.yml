@@ -17,14 +17,14 @@ before_install:
   - travis_retry sudo apt-get install -qq libsqlite3-dev
   - travis_retry git clone git://github.com/cawka/ndn-cpp ndn-cpp
   - cd ndn-cpp
-  - ./waf configure --with-tests
+  - ./waf configure
   - ./waf -j1
   - sudo ./waf install
   - sudo ldconfig
   - cd ..
 script:
   - ./waf configure --with-tests
-  - ./waf
+  - ./waf -j1
   - sudo ./waf install
   - ./build/unit-tests
 # Tutorial for setting up notifications:
